@@ -1,0 +1,30 @@
+<div class="send-feedback"><a href="#"><?php echo $this->__('Send Feedback') ?></a></div>
+
+<script type="text/javascript">
+    document.observe("dom:loaded", function () {
+        var feed = Feedback(
+            {
+                name:<?php echo json_encode($this->__('Feedback')) ?>,
+                label:<?php echo json_encode($this->__('Feedback')) ?>,
+                url: '<?php echo $this->getUrl('gbfeedback/feedback/post'); ?>',
+                header:<?php echo json_encode($this->__('Feedback')) ?>,
+                nextLabel: <?php echo json_encode($this->__('Continue') )?>,
+                reviewLabel: <?php echo json_encode($this->__("Review") )?>,
+                sendLabel: <?php echo json_encode($this->__("Send") )?>,
+                closeLabel: <?php echo json_encode($this->__("Close")) ?>,
+                messageSuccess: <?php echo json_encode($this->__("Your feedback was sent succesfully!")) ?>,
+                messageError: <?php echo json_encode($this->__("There was an error sending your feedback to the server!")) ?>,
+                appendTo: null,
+                pages: [
+                    new window.Feedback.Form(),
+                    new window.Feedback.Screenshot(),
+                    new window.Feedback.Review()
+                ]
+            }
+        );
+        $$('.send-feedback a').first().observe('click', function(event) {
+            feed.open();
+            return false;
+        });
+    });
+</script>

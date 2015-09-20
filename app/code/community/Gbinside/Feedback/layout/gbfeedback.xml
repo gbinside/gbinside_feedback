@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+
+<layout version="0.1.0">
+
+    <default>
+        <reference name="head">
+            <block type="gbfeedback/template" template="css.phtml" />
+            <block type="gbfeedback/template" template="js.phtml" />
+        </reference>
+
+        <reference name="before_body_end">
+            <block type="gbfeedback/template" template="button.phtml" />
+        </reference>
+    </default>
+
+</layout>
