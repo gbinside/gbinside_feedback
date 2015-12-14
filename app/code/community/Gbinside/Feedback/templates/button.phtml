@@ -6,7 +6,7 @@
             {
                 name:<?php echo json_encode($this->__('Feedback')) ?>,
                 label:<?php echo json_encode($this->__('Feedback')) ?>,
-                url: '<?php echo $this->getUrl('gbfeedback/feedback/post'); ?>',
+                url: <?php echo json_encode($this->getUrl('gbfeedback/feedback/post')); ?>,
                 header:<?php echo json_encode($this->__('Feedback')) ?>,
                 nextLabel: <?php echo json_encode($this->__('Continue') )?>,
                 reviewLabel: <?php echo json_encode($this->__("Review") )?>,
